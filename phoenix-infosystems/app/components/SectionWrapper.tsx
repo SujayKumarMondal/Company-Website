@@ -24,7 +24,7 @@ export const SectionWrapper = ({
   return (
     <motion.section
       id={id}
-      className={`relative w-full py-32 px-4 sm:px-6 lg:px-8 ${
+      className={`relative w-full py-24 lg:py-32 ${
         dark ? 'bg-slate-900 text-white' : 'bg-white text-gray-900'
       } ${className}`}
       initial="hidden"
@@ -32,36 +32,39 @@ export const SectionWrapper = ({
       viewport={{ once: true, margin: '-100px' }}
       variants={scrollVariants}
     >
-      {/* decorative shapes for lighter or dark sections */}
+      {/* Background Shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {!dark ? (
           <>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
+            <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-10" />
+            <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] bg-orange-100 rounded-full blur-3xl opacity-10" />
           </>
         ) : (
           <>
-            <div className="absolute top-0 right-0 w-72 h-72 bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-slate-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
+            <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-slate-700 rounded-full blur-3xl opacity-10" />
+            <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] bg-slate-600 rounded-full blur-3xl opacity-10" />
           </>
         )}
       </div>
-      <div className="max-w-7xl mx-auto space-y-12 relative">
+
+      <div className="relative max-w-7xl xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-10 space-y-20">
+
         {(title || subtitle) && (
-          <div className="text-center mb-16">
+          <div className="text-center max-w-3xl mx-auto">
             {title && (
               <motion.h2
-                className="text-4xl sm:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent"
                 variants={scrollVariants}
               >
                 {title}
               </motion.h2>
             )}
+
             {subtitle && (
               <motion.p
                 className={`text-lg sm:text-xl ${
                   dark ? 'text-slate-300' : 'text-gray-600'
-                } max-w-3xl mx-auto`}
+                }`}
                 variants={scrollVariants}
               >
                 {subtitle}
@@ -69,6 +72,7 @@ export const SectionWrapper = ({
             )}
           </div>
         )}
+
         {children}
       </div>
     </motion.section>

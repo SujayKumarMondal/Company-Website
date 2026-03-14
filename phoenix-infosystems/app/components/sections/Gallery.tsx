@@ -22,7 +22,7 @@ export const GallerySection = ({ dark = false }: GallerySectionProps) => {
       subtitle="Showcasing our latest projects and achievements"
     >
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 lg:gap-11"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -31,10 +31,10 @@ export const GallerySection = ({ dark = false }: GallerySectionProps) => {
         {GALLERY_IMAGES.map((image) => (
           <motion.div
             key={image.id}
-            className="relative h-64 sm:h-80 rounded-lg overflow-hidden cursor-pointer group shadow-lg"
+            className="relative h-72 sm:h-80 rounded-2xl overflow-hidden cursor-pointer group shadow-lg hover:shadow-xl transition-shadow duration-300"
             variants={itemVariants}
             onClick={() => setSelectedImage(image)}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
           >
             <Image
               src={image.src}

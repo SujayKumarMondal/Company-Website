@@ -34,37 +34,37 @@ export const Footer = () => {
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 py-20 border-b border-slate-800">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-white mb-6">
               {COMPANY_INFO.name}
             </h3>
-            <p className="text-sm leading-relaxed mb-4">
+            <p className="text-sm leading-relaxed mb-6 text-slate-400">
               Transforming businesses through innovative technology solutions and
               strategic partnerships.
             </p>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="flex items-center gap-2 text-sm hover:text-orange-500 transition-colors"
+                className="flex items-center gap-3 text-sm hover:text-orange-500 transition-colors group"
               >
-                <Mail size={16} />
+                <Mail size={18} className="group-hover:scale-110 transition-transform" />
                 {COMPANY_INFO.email}
               </a>
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="flex items-center gap-2 text-sm hover:text-orange-500 transition-colors"
+                className="flex items-center gap-3 text-sm hover:text-orange-500 transition-colors group"
               >
-                <Phone size={16} />
+                <Phone size={18} className="group-hover:scale-110 transition-transform" />
                 {COMPANY_INFO.phone}
               </a>
-              <div className="flex items-center gap-2 text-sm">
-                <MapPin size={16} />
+              <div className="flex items-start gap-3 text-sm text-slate-400">
+                <MapPin size={18} className="mt-0.5 shrink-0" />
                 {COMPANY_INFO.address}
               </div>
             </div>
@@ -79,15 +79,17 @@ export const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <h4 className="text-white font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="text-white font-semibold mb-6 text-lg">{section.title}</h4>
+              <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm hover:text-orange-500 transition-colors"
+                      className="text-sm text-slate-400 hover:text-orange-500 transition-colors group"
                     >
-                      {link.label}
+                      <span className="group-hover:translate-x-1 inline-block transition-transform">
+                        {link.label}
+                      </span>
                     </a>
                   </li>
                 ))}

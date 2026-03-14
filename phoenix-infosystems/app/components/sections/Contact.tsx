@@ -93,79 +93,79 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
       subtitle="We'd love to hear from you. Let's discuss how we can help your business grow."
     >
       <motion.div
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         {/* Contact Information */}
-        <motion.div variants={itemVariants}>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Info</h3>
+        <motion.div variants={itemVariants} className="lg:col-span-2">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8">Contact Info</h3>
 
-          <div className="space-y-6">
+          <div className="space-y-7">
             {/* Email */}
             <motion.a
               href={`mailto:${COMPANY_INFO.email}`}
-              className="flex items-start gap-4 p-4 rounded-lg hover:bg-blue-50 transition-colors"
-              whileHover={{ x: 5 }}
+              className="flex items-start gap-5 p-5 rounded-xl hover:bg-blue-50 transition-all duration-300 group"
+              whileHover={{ x: 8 }}
             >
               <div className="shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-600 text-white">
-                  <Mail size={20} />
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 group-hover:bg-orange-500 text-white transition-colors shadow-md">
+                  <Mail size={24} />
                 </div>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Email</p>
-                <p className="text-sm text-gray-600">{COMPANY_INFO.email}</p>
+                <p className="text-sm font-semibold text-gray-900">Email</p>
+                <p className="text-base text-gray-600 break-all">{COMPANY_INFO.email}</p>
               </div>
             </motion.a>
 
             {/* Phone */}
             <motion.a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="flex items-start gap-4 p-4 rounded-lg hover:bg-blue-50 transition-colors"
-              whileHover={{ x: 5 }}
+              className="flex items-start gap-5 p-5 rounded-xl hover:bg-blue-50 transition-all duration-300 group"
+              whileHover={{ x: 8 }}
             >
               <div className="shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-600 text-white">
-                  <Phone size={20} />
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 group-hover:bg-orange-500 text-white transition-colors shadow-md">
+                  <Phone size={24} />
                 </div>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Phone</p>
-                <p className="text-sm text-gray-600">{COMPANY_INFO.phone}</p>
+                <p className="text-sm font-semibold text-gray-900">Phone</p>
+                <p className="text-base text-gray-600">{COMPANY_INFO.phone}</p>
               </div>
             </motion.a>
 
             {/* Address */}
             <motion.div
-              className="flex items-start gap-4 p-4 rounded-lg hover:bg-blue-50 transition-colors"
-              whileHover={{ x: 5 }}
+              className="flex items-start gap-5 p-5 rounded-xl hover:bg-blue-50 transition-all duration-300 group"
+              whileHover={{ x: 8 }}
             >
               <div className="shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-600 text-white">
-                  <MapPin size={20} />
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-600 group-hover:bg-orange-500 text-white transition-colors shadow-md">
+                  <MapPin size={24} />
                 </div>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Address</p>
-                <p className="text-sm text-gray-600">{COMPANY_INFO.address}</p>
+                <p className="text-sm font-semibold text-gray-900">Address</p>
+                <p className="text-base text-gray-600">{COMPANY_INFO.address}</p>
               </div>
             </motion.div>
           </div>
 
           {/* Social Icons */}
-          <motion.div className="mt-8" variants={itemVariants}>
-            <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
+          <motion.div className="mt-10" variants={itemVariants}>
+            <h4 className="font-semibold text-gray-900 mb-5 text-lg">Follow Us</h4>
             <div className="flex gap-4">
               {['LinkedIn', 'Twitter', 'Facebook', 'Instagram'].map((social) => (
                 <motion.a
                   key={social}
                   href="#"
-                  className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.9 }}
                   aria-label={social}
                 >
                   {social[0]}
@@ -178,15 +178,15 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className="lg:col-span-2 bg-gray-50 rounded-lg p-8 border border-gray-200"
+          className="lg:col-span-3 bg-linear-to-br from-gray-50 to-gray-100 rounded-2xl p-10 border border-gray-200 shadow-lg"
           variants={itemVariants}
         >
-          <motion.div className="space-y-4">
+          <motion.div className="space-y-7">
             {/* Name Field */}
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-semibold text-gray-900 mb-3"
               >
                 Full Name
               </label>
@@ -196,13 +196,13 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
+                className={`w-full px-5 py-3.5 rounded-lg border ${
                   errors.name ? 'border-red-500' : 'border-gray-300'
-                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white text-base`}
                 placeholder="John Doe"
               />
               {errors.name && (
-                <p className="text-red-600 text-sm mt-1">{errors.name}</p>
+                <p className="text-red-600 text-sm mt-2">{errors.name}</p>
               )}
             </motion.div>
 
@@ -210,7 +210,7 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-semibold text-gray-900 mb-3"
               >
                 Email Address
               </label>
@@ -220,13 +220,13 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
+                className={`w-full px-5 py-3.5 rounded-lg border ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
-                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors`}
+                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white text-base`}
                 placeholder="john@example.com"
               />
               {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+                <p className="text-red-600 text-sm mt-2">{errors.email}</p>
               )}
             </motion.div>
 
@@ -234,7 +234,7 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-semibold text-gray-900 mb-3"
               >
                 Message
               </label>
@@ -243,26 +243,26 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
-                className={`w-full px-4 py-3 rounded-lg border ${
+                rows={6}
+                className={`w-full px-5 py-3.5 rounded-lg border ${
                   errors.message ? 'border-red-500' : 'border-gray-300'
-                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none`}
+                } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none bg-white text-base`}
                 placeholder="Tell us about your project..."
               />
               {errors.message && (
-                <p className="text-red-600 text-sm mt-1">{errors.message}</p>
+                <p className="text-red-600 text-sm mt-2">{errors.message}</p>
               )}
             </motion.div>
 
             {/* Success Message */}
             {isSubmitted && (
               <motion.div
-                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2"
+                className="bg-green-100 border border-green-400 text-green-700 px-5 py-4 rounded-lg flex items-center gap-3"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <Check size={20} />
-                <p>Thank you! We'll be in touch soon.</p>
+                <Check size={22} />
+                <p className="text-base font-medium">Thank you! We'll be in touch soon.</p>
               </motion.div>
             )}
 
@@ -270,7 +270,7 @@ export const ContactSection = ({ dark = false }: ContactSectionProps) => {
             <motion.button
               type="submit"
               disabled={isLoading || isSubmitted}
-              className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white py-4 rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-base mt-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

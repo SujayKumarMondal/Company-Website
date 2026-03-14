@@ -47,35 +47,35 @@ export const AboutSection = ({ dark = false }: AboutSectionProps) => {
       dark={dark}
     >
       <motion.div
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         {/* Content */}
-        <motion.div variants={itemVariants}>
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h3>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+        <motion.div variants={itemVariants} className="flex flex-col justify-center">
+          <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Our Story</h3>
+          <p className="text-gray-600 text-lg leading-relaxed mb-10">
             Founded in {COMPANY_INFO.yearFounded}, Phoenix Infosystems has evolved into a
             trusted technology partner for enterprises across sectors. Our commitment to
             excellence and innovation drives every project we undertake.
           </p>
 
-          <div className="space-y-4 mb-8">
+          <div className="space-y-8 mb-12">
             <div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Our Mission</h4>
-              <p className="text-gray-600">{COMPANY_INFO.mission}</p>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h4>
+              <p className="text-gray-600 text-base leading-relaxed">{COMPANY_INFO.mission}</p>
             </div>
             <div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Our Vision</h4>
-              <p className="text-gray-600">{COMPANY_INFO.vision}</p>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h4>
+              <p className="text-gray-600 text-base leading-relaxed">{COMPANY_INFO.vision}</p>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <h4 className="text-xl font-bold text-gray-900 mb-3">Why Choose Us</h4>
-            <ul className="space-y-2">
+          <div className="space-y-4">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us</h4>
+            <ul className="space-y-4">
               {[
                 'Industry-leading expertise and innovation',
                 'Customer-centric approach and support',
@@ -85,10 +85,10 @@ export const AboutSection = ({ dark = false }: AboutSectionProps) => {
                 <motion.li
                   key={idx}
                   className="flex items-start"
-                  whileHover={{ x: 5 }}
+                  whileHover={{ x: 8 }}
                 >
-                  <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 shrink-0" />
-                  <span className="text-gray-600">{item}</span>
+                  <span className="inline-block w-4 h-4 bg-blue-600 rounded-full mt-1.5 mr-5 shrink-0" />
+                  <span className="text-gray-700 text-base leading-relaxed">{item}</span>
                 </motion.li>
               ))}
             </ul>
@@ -99,29 +99,30 @@ export const AboutSection = ({ dark = false }: AboutSectionProps) => {
         <motion.div
           className="relative"
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
         >
-          <div className="relative w-full h-96 bg-linear-to-br from-blue-400 to-orange-400 rounded-lg shadow-xl overflow-hidden">
+          <div className="relative w-full h-96 bg-linear-to-br from-blue-400 via-blue-500 to-orange-400 rounded-2xl shadow-2xl overflow-hidden">
             <motion.div
-              className="w-full h-full flex items-center justify-center text-white text-6xl font-bold"
+              className="w-full h-full flex items-center justify-center text-white text-7xl font-bold"
               animate={{
-                scale: [1, 1.05, 1],
+                scale: [1, 1.08, 1],
               }}
               transition={{
-                duration: 4,
+                duration: 5,
                 repeat: Infinity,
               }}
             >
               🚀
             </motion.div>
           </div>
-          <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl" />
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500/30 rounded-full blur-3xl" />
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl" />
         </motion.div>
       </motion.div>
 
       {/* Counters */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-10 bg-slate-50 rounded-xl p-16 border border-slate-200"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-9 bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl p-12 lg:p-16 border border-slate-200/50 shadow-sm"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

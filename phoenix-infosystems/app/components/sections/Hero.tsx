@@ -16,31 +16,24 @@ export const HeroSection = () => {
       id="home"
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Animated Background */}
-      <motion.div
-        className="absolute inset-0 bg-linear-to-br from-blue-50 via-white to-orange-50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Animated Shapes */}
-        <motion.div
-          className="absolute top-10 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80")',
           }}
         />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Animated accent shapes */}
         <motion.div
-          className="absolute -bottom-32 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+          className="absolute top-20 right-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
           animate={{
-            x: [0, -50, 0],
-            y: [0, 100, 0],
+            x: [0, 100, 0],
+            y: [0, 60, 0],
           }}
           transition={{
             duration: 10,
@@ -48,63 +41,64 @@ export const HeroSection = () => {
             ease: 'easeInOut',
           }}
         />
-      </motion.div>
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      <div className="relative z-10 max-w-7xl xl:max-w-350 mx-auto px-6 sm:px-8 lg:px-10 py-32 text-center">
         {/* Tagline */}
         <motion.div
-          className="inline-block mb-6"
+          className="inline-block mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
-            Welcome to Phoenix Infosystems
+          <span className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full text-sm font-semibold border border-white/20">
+            Welcome to {COMPANY_INFO.name}
           </span>
         </motion.div>
 
         {/* Main Heading */}
         <motion.h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-lg"
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Transform Your Business with{' '}
-          <span className="bg-linear-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
-            Innovative Technology
+          Transform Your{' '}
+          <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-orange-400 bg-clip-text text-transparent">
+            Business Today
           </span>
         </motion.h1>
 
         {/* Subheading */}
         <motion.p
-          className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-xl sm:text-2xl lg:text-3xl text-gray-100 mb-10 max-w-4xl mx-auto leading-relaxed drop-shadow-md font-light"
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          {COMPANY_INFO.tagline} - Empowering businesses worldwide with cutting-edge solutions
-          and strategic partnerships.
+          {COMPANY_INFO.tagline} — Empowering enterprises with innovative technology
+          solutions that drive growth and digital excellence
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="flex flex-col sm:flex-row gap-5 justify-center mb-20 flex-wrap"
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
           <Button
             size="lg"
             onClick={() => handleScroll('#services')}
-            className="group"
+            className="group bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8"
           >
-            Get Started <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" />
+            Get Started <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
             variant="outline"
             size="lg"
             onClick={() => handleScroll('#contact')}
+            className="px-8 bg-white/10 border-white/30 text-white hover:bg-white/20"
           >
             Contact Us
           </Button>
@@ -112,25 +106,25 @@ export const HeroSection = () => {
 
         {/* Stats Preview */}
         <motion.div
-          className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
           {[
-            { label: 'Years Experience', value: '14+' },
-            { label: 'Happy Clients', value: '500+' },
-            { label: 'Projects Delivered', value: '1000+' },
+            { label: 'Years of Excellence', value: '14+' },
+            { label: 'Global Clients', value: '500+' },
+            { label: 'Projects Completed', value: '1000+' },
           ].map((stat, idx) => (
             <motion.div
               key={idx}
-              className="text-center"
-              whileHover={{ y: -5 }}
+              className="text-center backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10"
+              whileHover={{ y: -8, backgroundColor: 'rgba(255,255,255,0.1)' }}
             >
-              <p className="text-3xl sm:text-4xl font-bold text-blue-600 mb-1">
+              <p className="text-4xl sm:text-5xl font-bold text-blue-300 mb-2">
                 {stat.value}
               </p>
-              <p className="text-sm sm:text-base text-gray-600">{stat.label}</p>
+              <p className="text-sm sm:text-base text-gray-200 font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -138,11 +132,11 @@ export const HeroSection = () => {
         {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity }}
         >
           <svg
-            className="w-6 h-6 text-gray-400"
+            className="w-7 h-7 text-white drop-shadow-lg"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

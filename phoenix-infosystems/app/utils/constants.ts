@@ -1,4 +1,4 @@
-import { Service, Job, Testimonial, GalleryImage } from '@/types';
+import { Service, Job, Testimonial, GalleryImage, Statistic, TeamMember, FAQ } from '@/types';
 
 export const SERVICES: Service[] = [
   {
@@ -140,6 +140,117 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop',
     alt: 'Innovation lab',
     title: 'Innovation Lab',
+  },
+];
+
+export const STATISTICS: Statistic[] = [
+  {
+    id: 1,
+    label: 'Working Hours',
+    value: 13500,
+    icon: 'Clock',
+  },
+  {
+    id: 2,
+    label: 'Completed Projects',
+    value: 720,
+    icon: 'CheckCircle',
+  },
+  {
+    id: 3,
+    label: 'Happy Clients',
+    value: 480,
+    icon: 'Smile',
+  },
+  {
+    id: 4,
+    label: 'Awards Received',
+    value: 120,
+    icon: 'Trophy',
+  },
+];
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: 1,
+    name: 'Samantha Wilson',
+    role: 'Lead Developer',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    socials: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com',
+      instagram: 'https://instagram.com',
+    },
+  },
+  {
+    id: 2,
+    name: 'Marcus Johnson',
+    role: 'Senior Designer',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    socials: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com',
+      instagram: 'https://instagram.com',
+    },
+  },
+  {
+    id: 3,
+    name: 'Priya Kapoor',
+    role: 'Product Manager',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+    socials: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com',
+      instagram: 'https://instagram.com',
+    },
+  },
+  {
+    id: 4,
+    name: 'David Chen',
+    role: 'DevOps Engineer',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+    socials: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com',
+      instagram: 'https://instagram.com',
+    },
+  },
+];
+
+export const FAQs: FAQ[] = [
+  {
+    id: 1,
+    question: 'How Much Will It Cost?',
+    answer:
+      'The cost of our services varies depending on project scope, complexity, and timeline. We provide detailed quotations after understanding your specific requirements. Contact us for a custom quote.',
+  },
+  {
+    id: 2,
+    question: 'How Long It Takes To Design?',
+    answer:
+      'Project timelines depend on scope and requirements. Typically, a website design takes 2-4 weeks, while custom applications may take 2-6 months. We provide timeline estimates during initial consultations.',
+  },
+  {
+    id: 3,
+    question: 'How Do I Associate With Phoenix Infosystems?',
+    answer:
+      'You can reach out to us through our contact form, email, or phone. Our team will discuss your project needs and create a tailored proposal. We work with businesses of all sizes.',
+  },
+  {
+    id: 4,
+    question: 'Can You Help My Current Site Look More Professional?',
+    answer:
+      'Absolutely! We offer website redesign and modernization services. Our team can revamp your existing site with modern design, improved user experience, and enhanced functionality.',
+  },
+  {
+    id: 5,
+    question: 'When Do I Pay?',
+    answer:
+      'We typically work with a 50% upfront deposit and 50% upon completion. For larger projects, we may offer milestone-based payment options. All terms are discussed and agreed upon before project start.',
   },
 ];
 

@@ -35,7 +35,7 @@ export const ServicesSection = ({ dark = false }: ServicesSectionProps) => {
       dark={dark}
     >
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 lg:gap-11"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -46,35 +46,35 @@ export const ServicesSection = ({ dark = false }: ServicesSectionProps) => {
           return (
             <motion.div
               key={service.id}
-              className="group bg-white rounded-xl shadow-lg border border-gray-200 p-10 hover:shadow-2xl transition-all duration-300 hover:border-blue-500"
+              className="group relative bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-100 p-8 lg:p-9 transition-all duration-300 hover:border-blue-400 overflow-hidden"
               variants={itemVariants}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8 }}
             >
-              <div className="mb-4 inline-block p-3 bg-linear-to-br from-blue-100 to-orange-100 rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 inline-block p-3 bg-linear-to-br from-blue-100 to-orange-100 rounded-xl group-hover:scale-110 transition-transform duration-300">
                 {Icon && (
-                  <Icon className="w-6 h-6 text-blue-600 group-hover:text-orange-500 transition-colors" />
+                  <Icon className="w-7 h-7 text-blue-600 group-hover:text-orange-500 transition-colors" />
                 )}
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed text-base">
                 {service.description}
               </p>
 
               <motion.a
                 href="#contact"
-                className="inline-flex items-center text-blue-600 font-semibold hover:text-orange-500 transition-colors"
+                className="inline-flex items-center text-blue-600 font-semibold hover:text-orange-500 transition-colors group/link"
                 whileHover={{ x: 5 }}
               >
                 Learn more
-                <span className="ml-2">→</span>
+                <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </motion.a>
 
               {/* Decorative Border */}
-              <div className="absolute inset-0 bg-linear-to-br from-blue-600/0 to-orange-500/0 rounded-xl group-hover:from-blue-600/5 group-hover:to-orange-500/5 transition-all duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-600/0 to-orange-500/0 rounded-2xl group-hover:from-blue-600/5 group-hover:to-orange-500/5 transition-all duration-300 pointer-events-none" />
             </motion.div>
           );
         })}
